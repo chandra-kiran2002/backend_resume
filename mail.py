@@ -16,7 +16,7 @@ def sendMail(name,tomail,body):
     """
 
     subject2 = "Mail from Client "+name
-    body2 = "Client Email:"+tomail+"\n" + body
+    body2 = "Client Email:  "+tomail+"\n\n" + body
     finalMail(email_sender,email_receiver,subject1,body1,email_password)
     finalMail(email_sender,"jinkachandrakiran2002@gmail.com" , subject2, body2, email_password)
 def finalMail(email_sender,email_receiver,subject,body,email_password):
