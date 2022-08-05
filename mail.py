@@ -11,7 +11,7 @@ def sendMail(name,tomail,body):
     # Set the subject and body of the email
     subject1 = 'Thanks for Reaching me....'
     body1 = """
-                I am chandra kiran.Java and Python developer. 
+        I am chandra kiran.Java and Python developer. 
     Thanks for reaching me.I will contact you shortly…
     """
 
