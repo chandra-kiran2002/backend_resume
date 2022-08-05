@@ -4,6 +4,8 @@ from email.message import EmailMessage
 
 def sendMail(name,tomail,body):
     # Define email sender and receiver
+    if(checkMail(tomail) is False):
+        return False
     email_sender = 'dummy.python10@gmail.com'
     email_password = 'awjhkdqtopyxqkda'
     email_receiver = tomail
@@ -19,6 +21,7 @@ def sendMail(name,tomail,body):
     body2 = "Client Email:  "+tomail+"\n\n" + body
     finalMail(email_sender,email_receiver,subject1,body1,email_password)
     finalMail(email_sender,"jinkachandrakiran2002@gmail.com" , subject2, body2, email_password)
+    return True
 def finalMail(email_sender,email_receiver,subject,body,email_password):
     em = EmailMessage()
     em['From'] = email_sender
@@ -33,3 +36,11 @@ def finalMail(email_sender,email_receiver,subject,body,email_password):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         smtp.login(email_sender, email_password)
         smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+def checkMail(email):
+    import re
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    if (re.fullmatch(regex, email)):
+        return True
+    else:
+        return False

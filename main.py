@@ -11,8 +11,10 @@ def home():
 @app.route('/login',methods = ['POST'])
 def login():
       print(request.json)
-      mail.sendMail(request.json["name"],request.json["email"],request.json["body"])
-      return "success"
+      if mail.sendMail(request.json["name"],request.json["email"],request.json["body"]) is True:
+           return "success"
+      else:
+          return "failed"
 
 
 
