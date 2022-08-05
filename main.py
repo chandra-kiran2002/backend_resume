@@ -6,7 +6,7 @@ import mail
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
       print(request.json)
-      mail.sendMail()
+      mail.sendMail(request.json["name"],request.json["email"],request.json["body"])
       return "hi"
 
 
