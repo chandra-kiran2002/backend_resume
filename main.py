@@ -7,7 +7,7 @@ import mail
 def login():
       print(request.json)
       mail.sendMail(request.json["name"],request.json["email"],request.json["body"])
-      return "hi"
+      return "success"
 
 
 
