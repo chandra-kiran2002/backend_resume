@@ -3,6 +3,11 @@ app=Flask(__name__)
 import mail
 
 
+@app.route('/',methods = ['POST'])
+def home():
+      return "hello"
+
+
 @app.route('/login',methods = ['POST'])
 def login():
       print(request.json)
