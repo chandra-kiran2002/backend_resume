@@ -7,7 +7,7 @@ def sendMail(name,tomail,body):
     if(checkMail(tomail) is False):
         return False
     email_sender = 'dummy.python10@gmail.com'
-    email_password = 'awjhkdqtopyxqkda'
+    email_password = 'tzxyxuwrgrdrnwbe'
     email_receiver = tomail
 
     # Set the subject and body of the email
