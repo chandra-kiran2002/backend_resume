@@ -2,8 +2,8 @@ from flask import Flask,request
 from flask_cors import CORS, cross_origin
 app=Flask(__name__)
 import mail
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app)
+#app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/',methods = ['POST'])
